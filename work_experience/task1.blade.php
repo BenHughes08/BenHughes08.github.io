@@ -1,8 +1,211 @@
 <style>
-    
+ 
+    * {
+        box-sizing: border-box;
+    }
+ 
+    body { 
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ccc;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+.flex-container {
+    display: flex;
+    background-color:white;
+    border-radius: 18px;
+    height: 100%;
+    max-width: 1300px;
+    max-height: 700px;
+}
+@media screen and (max-width: 800px) {
+  .flex-container {
+    max-width: 500px;
+    max-height: 400px;
+  }
+} 
+ 
+ 
+ 
+.left {
+    display: flex;
+    width:50%;
+    padding: 40px;
+    flex-direction: column;
+    justify-content: center;
+ 
+}
+ 
+@media screen and (max-width: 800px) {
+    .left {
+        padding: 20px;
+    }
+}
+ 
+.left > div {
+    text-align: center;
+}
+ 
+.right {
+    display: flex;
+    width:50%;
+    background: linear-gradient(90deg, rgba(251,70,238,1) 0%, rgba(109,70,251,1) 50%, rgba(0,125,255,1) 100%);
+    border-radius: 0 18px 18px 0;
+    color: white;
+    padding: 60px;
+    align-items: center;
+    line-height: 300%;
+}
+ 
+@media screen and (max-width: 800px) {
+    .right{
+        line-height: 1;
+        padding: 30px;
+    }
+}
+.right h4 {
+    font-size: 50px;
+}
+ 
+@media screen and (max-width: 800px) {
+  .right h4{
+    font-size: 30px;
+  }
+} 
+ 
+.left h4 {
+    font-size: 23px; 
+    margin: 5px 26px 26px 26px;
+}
+ 
+@media screen and (max-width: 800px) {
+    .left h4 {
+        font-size: 15px;
+        margin: 3px 15px 15px 15px;
+    }
+}
+ 
+.left svg {
+    margin-top: 20px;
+ 
+}
+ 
+@media screen and (max-width: 800px) {
+    .left svg {
+        margin-top: 5px;
+    }
+}
+ 
+.left p {
+    font-size: 18px;
+    margin-top: 80px
+}
+ 
+@media screen and (max-width: 800px) {
+    .left p {
+        margin-top: 5px;
+    }
+}
+ 
+ 
+.left .FieldWrapper input {
+    width: 100%;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+}
+ 
+.left .FieldWrapper input::placeholder{
+    font-size: 17px;
+}
+ 
+.left .FieldWrapper label {
+    display: none;
+}
+ 
+.left .LogIn {
+    flex-wrap: wrap;
+}
+ 
+.left .LogIn{
+    text-align: center;
+}
+ 
+.left .LogIn button {
+    margin-top: 20px;
+    background: linear-gradient(90deg, rgba(251,70,238,1) 0%, rgba(109,70,251,1) 50%, rgba(0,125,255,1) 100%);
+    height: 35px;
+    width: 100%;
+    border: 0px;
+    border-radius: 3px;
+    font-size: 18px;
+    color: white;
+}
+ 
+@media screen and (max-width: 800px) {
+    .left .LogIn button {
+        height: 30px;
+    }
+}
+ 
+.left .LogIn a {
+    margin-top: 12px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 40px;
+}
+ 
+@media screen and (max-width: 800px) {
+    .left .LogIn a {
+        font-size: 14px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+}
+ 
+.left .Register {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+.left .Register button {
+    width: 125px;
+    height: 30px;
+    color:red;
+    background-color: white;
+    border-color: #ccc;
+    border-radius: 5px;
+}
+ 
+.left .Register p {
+    font-size: 18px;
+    margin: 0px;
+}
+ 
+@media screen and (max-width: 800px) {
+    .left .Register p {
+        font-size: 14px;
+    }
+}
+ 
+ 
+.right p {
+    font-size: 20px;
+}
+ 
+@media screen and (max-width:800px) {
+    .right p{
+        font-size: 18px;
+    }
+}
+ 
 </style>
-
-<section class="">
+<section class="flex-container">
+ 
+    <div class="left">
     <!--Logo-->
     <div>
         <svg width="118" height="34" viewBox="0 0 998 308" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
@@ -18,43 +221,48 @@
             We are the Evo Agency
         </h4>
     </div>
-
+ 
     <form>
         <p>Please login to your account</p>
         <!--Username input-->
-        <div>
-            <input type="text" placeholder="Username"/>
+        <div class="FieldWrapper">
             <label for="exampleFormControlInput1">Username</label>
+            <input type="text" placeholder="Username"/>
         </div>
-
+ 
         <!--Password input-->
-        <div>
-            <input type="password" placeholder="Password"/>
+        <div class="FieldWrapper">
             <label for="exampleFormControlInput11">Password</label>
+            <input type="password" placeholder="Password"/>
         </div>
-
+ 
         <!--Submit button-->
-        <div>
+        <div class="LogIn">
             <button type="button">Log in</button>
             <a href="#!">Forgot password?</a>
         </div>
-
+ 
         <!--Register button-->
-        <div>
-            <p>Don't have an account?</p>
-            <button type="button">Register</button>
+        <div class="Register">
+            <p>Don't have an account?</p> 
+            <button type="button">REGISTER</button>
         </div>
     </form>
-    <div>
-        <h4>
-            We are more than just a company
-        </h4>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
-        </p>
     </div>
+ 
+    <div class="right">
+        <div>
+            <h4>
+                We are more than just a company
+            </h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea commodo consequat.
+            </p>
+        </div>
+    </div>
+ 
 </section>
